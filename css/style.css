@@ -1,0 +1,1301 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+/* Header */
+.header {
+    background-color: #fff;
+    padding: 0 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    height: 80px;
+    padding-top: 8px;
+}
+
+.logo{
+    text-align: left;
+}
+.nav-container {
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #DE0C2C;
+    font-weight: bold;
+}
+
+/* Burger Icon */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.burger-line {
+    height: 3px;
+    width: 25px;
+    background-color: #DE0C2C;
+    margin: 4px 0;
+    border-radius: 10px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .burger {
+        display: flex; /* Show burger icon on mobile */
+    }
+}
+
+
+.hero {
+    position: relative; /* Ensure children can be positioned over it */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    min-height: 400px; /* Set a minimum height for the hero section */
+    overflow: hidden; /* Hide any overflow from the image */
+}
+
+.hero-offer {
+  position: relative; /* Ensure children can be positioned over it */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 50px;
+  text-align: center;
+  color: #fff;
+  min-height: 332px; /* Set a minimum height for the hero section */
+  overflow: hidden; /* Hide any overflow from the image */
+  display: none;
+  background-color: #DE0C2C;
+}
+
+.hero-background {
+    position: absolute; /* Position the image absolutely within the hero */
+    top: 0; 
+    left: 0; 
+    width: 100%; /* Make the image cover the entire area */
+    height: 100%; /* Make the image cover the entire area */
+    object-fit: cover; /* Ensure the image covers without stretching */
+    z-index: -1; /* Send the image behind other content */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero-column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+    min-width: 300px; /* Ensures columns stack on smaller screens */
+}
+.hero-card-desk h3 {
+  font-size: 24px;
+  color: #DE0C2C;
+}
+
+.hero-card-desk h4 {
+  font-size: 20px;
+  color: #DE0C2C;
+}
+
+.hero-card-desk p {
+  font-size: 22px;
+  color: #DE0C2C;
+}
+
+
+
+/* Hero Content Styling */
+.hero-text {
+    position: relative; /* Keep it positioned */
+    z-index: 2; /* Ensure it's above other content */
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+    backdrop-filter: blur(5px); /* Blur effect */
+    border-radius: 10px; /* Optional: rounded corners */
+    padding: 20px; /* Optional: padding inside the content */
+    max-width: 450px; /* Optional: max width */
+    margin: 20px; /* Optional: margin for spacing */
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px white;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #DE0C2C;
+}
+
+.hero-content .btn-primary {
+    background-color: #DE0C2C;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.hero-content .btn-primary:hover {
+    background-color: #DE0C2C;
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
+/* Hero Card Styling */
+.hero-card {
+    background-color: #fff;
+    color: #333;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.hero-card h3 {
+  font-size: 24px;
+  color: #DE0C2C;
+}
+
+.hero-card h4 {
+  font-size: 20px;
+  color: #DE0C2C;
+}
+
+.hero-card p {
+  font-size: 22px;
+  color: #DE0C2C;
+}
+
+.hero-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.hero-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.hero-card ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.hero-card .btn-primary, .hero-card .btn-secondary {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.hero-card .btn-secondary {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+.hero-card .btn-primary:hover, .hero-card .btn-secondary:hover {
+    transform: translateY(-3px);
+    font-weight: bold;
+}
+
+.hero-card .btn-secondary:hover {
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+/* Hero Card Styling */
+.hero-card-desk {
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 300px;
+  animation: slideInLeft 1s ease-in-out;
+  margin: 0px 100px;
+}
+
+.hero-card-desk h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.hero-card-desk ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.hero-card-desk ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.hero-card-desk .btn-primary, .hero-card .btn-secondary {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+}
+
+.hero-card-desk .btn-secondary {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.hero-card-desk .btn-primary:hover, .hero-card .btn-secondary:hover {
+  transform: translateY(-3px);
+  font-weight: bold;
+}
+
+.hero-card-desk .btn-secondary:hover {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+
+/* Animation for sliding the card in */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Stack columns vertically on mobile */
+    }
+
+    .hero-offer {
+      display: block;
+    }
+
+    .hero-card {
+        animation: slideInUp 1s ease-in-out;
+        max-width: 100%;
+    }
+
+    .hero-card-desk {
+      animation: slideInUp 1s ease-in-out;
+      max-width: 100%;
+      display: none;
+  }
+
+    /* Animation for mobile (sliding up) */
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Features Section */
+.features {
+    background-color: #DE0C2C;
+    padding: 20px 20px;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.features h5 {
+  color: #DE0C2C;
+  font-size: 20px;
+  
+}
+
+.features p {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Pre-Registration Section */
+.registration {
+    background-color: #DE0C2C;
+    color: #fff;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.registration h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #DE0C2C;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(112, 112, 112, 0.1);
+}
+
+.btn-primary {
+    background-color: #DE0C2C;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #DE0C2C;
+    font-weight: bold;
+}
+
+
+/* Popup Form Styles */
+.popup-form {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-form.show {
+  display: flex;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 30px;
+  width: 400px; /* Default width */
+  max-width: 90%; /* Max width for smaller screens */
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+/* Close Button Style */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  color: #DE0C2C;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Title Style */
+.popup-content h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* Form Group Style */
+.popup-content .form-group {
+  margin-bottom: 15px;
+}
+
+/* Button Style */
+.popup-content .btn-primary {
+  background-color: #DE0C2C;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Button Hover Style */
+.popup-content .btn-primary:hover {
+  background-color: #B00A25; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .popup-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .popup-content {
+      width: 100%;
+      padding: 20px; 
+      height: auto; 
+  }
+
+  .popup-content h2 {
+      font-size: 1.5rem; 
+  }
+
+  .popup-content .btn-primary {
+      padding: 10px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .popup-content {
+      width: 100%;
+      padding: 20px; 
+      height: auto; 
+  }
+
+  .popup-content h2 {
+      font-size: 1.5rem; 
+  }
+
+  .popup-content .btn-primary {
+      padding: 10px; 
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-grid, .testimonial-grid {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 8px 16px;
+        font-weight: bold;
+    }
+
+    .popup-content {
+        width: 90%;
+    }
+}
+
+/* Price Section */
+.price {
+    background-color: #fff;
+    padding: 20px 20px;
+    text-align: center;
+  }
+  
+  .price h2 {
+    margin-bottom: 40px;
+  }
+  
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  .price-table th, .price-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .price-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .price-table td {
+    background-color: #fff;
+  }
+  
+  .btn-price-breakup {
+    background-color: #DE0C2C;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  
+  .btn-price-breakup:hover {
+    background-color: #DE0C2C;
+    font-weight: bold;
+  }
+
+  
+  /* Site and Floor Plan Section */
+.site-floor-plan {
+    background-color: #fff;
+    padding: 20px 20px;
+    text-align: center;
+  }
+  
+  .site-floor-plan h2 {
+    margin-bottom: 40px;
+  }
+  
+  .plan-top-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .plan-bottom-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .plan-bottom-row {
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .plan-item {
+    position: relative;
+    text-align: center;
+  }
+  
+  .plan-image-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .plan-image {
+    width: 100%;
+    height: auto;
+    filter: blur(5px); /* Always keep the image blurred */
+    transition: transform 0.3s ease;
+  }
+
+  .plan-image-master {
+    width: 100%;
+    max-height: 400px;
+    filter: blur(5px); /* Always keep the image blurred */
+    transition: transform 0.3s ease;
+  }
+  
+  .btn-enquire-now {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: #DE0C2C;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .plan-image-wrapper:hover .btn-enquire-now {
+    display: block;
+    opacity: 1;
+    font-weight: bold;
+  }
+  
+  /* Ensuring the image stays blurred on hover */
+  .plan-image-wrapper:hover .plan-image {
+    filter: blur(5px); /* Maintain the blur on hover */
+  }
+  
+  .plan-text {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #DE0C2C;
+    font-weight: bold ;
+  }
+  
+
+  /* Welcome Section */
+.welcome-section {
+    background-color: #fff;
+    padding: 20px 20px;
+    text-align: center; /* Align text to the left */
+}
+
+.welcome-section h2 {
+    margin-bottom: 20px;
+}
+
+.welcome-section p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Highlights List */
+.highlights-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left */
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap into the next line */
+    justify-content: flex-start; /* Align items to the left */
+    text-align: left; 
+}
+
+.highlights-list li {
+    margin: 10px 20px; /* Adjust spacing between items */
+    font-size: 1.1rem;
+    flex: 0 1 calc(50% - 40px); /* Two columns, accounting for margins */
+    box-sizing: border-box; /* Ensure padding/margin is included in width */
+    position: relative; /* To position the dot */
+    background-color: #f0f8ff; /* Highlighted background */
+    border-radius: 4px; /* Rounded corners */
+    padding-left: 10px; /* Space for the dot */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .highlights-list li {
+        flex: 0 1 100%; /* Single column layout for mobile */
+    }
+}
+
+.btn-primary {
+    background-color: #DE0C2C;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Gallery Section */
+.gallery-section-scroll {
+  background-color: #fff;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+div.scroll-container {
+  background-color: #DE0C2C;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+  width: auto; /* Allows images to maintain their original width */
+  max-width: 100%; /* Ensures images do not exceed the container width */
+  height: 400px;
+  
+  object-fit: cover;
+}
+
+/* Custom Scrollbar Styles */
+.scroll-container::-webkit-scrollbar {
+  height: 8px; /* Height of the scrollbar */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #b1b1b1; /* Scrollbar color */
+  border-radius: 10px; /* Rounded edges for the scrollbar */
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #a5a5a5; /* Color on hover */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #fff; /* Background of the scrollbar track */
+}
+
+
+/* Amenities section styles */
+.amenities-section {
+  padding: 20px;
+  background-color: #f4f4f4; /* Light gray background for amenities section */
+  text-align: center; /* Center-align text */
+}
+
+.amenities-gallery {
+  overflow: auto; /* Enable scrolling */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.amenity-item {
+  display: inline-block; /* Allows items to be placed next to each other */
+  margin: 10px;
+  position: relative; /* Position relative for caption placement */
+}
+
+.amenity-item img {
+  width: 250px; /* Increased width for amenities images */
+  height: 160px; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for images */
+  object-fit: cover;
+}
+
+.amenity-caption {
+  position: absolute; /* Position caption over the image */
+  bottom: 10px; /* Distance from the bottom of the image */
+  left: 0;
+  right: 0; /* Center the caption */
+  text-align: center; /* Center-align caption text */
+  color: white; /* White text color */
+  background-color: #DE0C2C; /* Semi-transparent background */
+  padding: 0px; /* Padding around caption text */
+  font-weight: bold;
+}
+
+/* Optional: Styling the scrollbar for WebKit browsers in amenities */
+.amenities-gallery::-webkit-scrollbar {
+  height: 8px; /* Height of horizontal scrollbar */
+}
+
+.amenities-gallery::-webkit-scrollbar-thumb {
+  background: #DE0C2C; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Rounded edges */
+}
+
+.amenities-gallery::-webkit-scrollbar-thumb:hover {
+  background: #646464; /* Color when hovering over the scrollbar */
+}
+
+.btn-primary {
+  background-color: #DE0C2C; /* Primary button color */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px; /* Spacing above the button */
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #a50000; /* Darker shade on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery img {
+      max-width: 80%; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery img {
+      max-width: 100%; /* Full width on extra small screens */
+  }
+}
+
+
+
+/* Location Section */
+.location-section {
+  padding: 20px 20px;
+  background-color: #fff;
+}
+
+.location-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.map-container {
+  flex: 1;
+  margin-right: 20px; /* Space between map and image */
+  position: relative; /* Positioning context for the child iframe */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Create a responsive aspect ratio */
+.map-container::before {
+  content: '';
+  display: block;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+.location-image {
+  flex: 1;
+}
+
+.location-image img {
+  max-width: 100%;
+  border-radius: 8px; /* Optional: rounded corners for the image */
+}
+
+.pointers {
+  text-align: center;
+  color: #DE0C2C;
+}
+
+.pointers-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pointers-list li {
+  background-color: #DE0C2C; /* Highlight background */
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 5px;
+  position: relative;
+  text-align: left; /* Align text to the left */
+  color: #fff;
+}
+
+.pointers-list li:before {
+  content: '•'; /* Dot before each list item */
+  position: absolute;
+  left: 7px; /* Adjust as needed */
+  font-weight: bold; /* Make dot bolder */
+  color: #fff; /* Color of the dot */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .location-content {
+      flex-direction: column; /* Stack elements in a column on mobile */
+  }
+
+  .map-container {
+      margin-right: 0; /* Remove right margin in mobile view */
+      margin-bottom: 20px; /* Add space below map */
+  }
+}
+
+/* Virtual Tour Section */
+#virtual-tour {
+  padding: 20px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.title {
+  color: #DE0C2C;
+  font-size: 2rem; /* Default font size for larger screens */
+  margin-bottom: 30px;
+}
+
+.tour-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tour-item {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  text-align: center;
+}
+
+.tour-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.tour-image {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.tour-image-container:hover .tour-image {
+  transform: scale(1.05); /* Zoom effect */
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.tour-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 97%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+.tour-overlay:hover {
+  transform: scale(1.05); /* Zoom effect */
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.tour-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 1.5rem; /* Default font size */
+  font-weight: bold;
+}
+
+.play-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 2rem; /* Default button size */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button i {
+  color: #333;
+}
+
+.play-button:hover {
+  transform: scale(1.2);
+  background-color: transparent;
+}
+
+.tour-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .tour-grid {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items */
+  }
+
+  .tour-item {
+      max-width: 100%; /* Allow items to take full width on mobile */
+  }
+
+  .title {
+      font-size: 1.8rem; /* Smaller font size for mobile */
+  }
+
+  .tour-text {
+      font-size: 1.2rem; /* Adjust font size for text */
+  }
+
+  .play-button {
+      padding: 10px; /* Smaller padding for button */
+      font-size: 1.5rem; /* Smaller button size */
+  }
+}
+
+  
+  /* About Developer Section */
+.about-developer {
+    padding: 20px 0;
+    background-color: #ffffff;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .about-developer .developer-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .about-developer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .about-developer p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* About Capital Acres Section */
+  .about-channel-partner {
+    padding: 20px 0;
+    background-color: #f0f0f0;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .about-channel-partner h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .about-channel-partner p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Disclaimer Section */
+  .disclaimer {
+    padding: 20px 0;
+    background-color: #646464;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .disclaimer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .disclaimer p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .disclaimer ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .disclaimer ul li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .disclaimer ul li a {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .disclaimer ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  
+
+
+  /* Floating Buttons */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  
+  .floating-buttons .floating-button {
+    margin: 10px 0;
+    width: 50px;
+    height: 50px;
+    background-color: #DE0C2C; /* For WhatsApp green color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .floating-buttons .floating-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .floating-buttons .floating-button img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  
+
+  .floating-button i {
+    color: white; /* Set icon color to white */
+    font-size: 24px; /* Increase the size of the icon */
+}
+  
+  /* Mobile View: Horizontal Layout */
+  @media only screen and (max-width: 768px) {
+    .floating-buttons {
+      bottom: 20px;
+      right: 50%;
+      transform: translateX(50%);
+      flex-direction: row;
+    }
+  
+    .floating-buttons .floating-button {
+      margin: 0 10px;
+    }
+  }
+
+ 
+
+  
