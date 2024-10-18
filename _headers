@@ -1,5 +1,5 @@
 /*
   X-Frame-Options: SAMEORIGIN
-  Content-Security-Policy: object-src 'none'; base-uri 'self'; frame-ancestors 'none'; frame-src 'self';
+  Content-Security-Policy: object-src 'none'; base-uri 'self'; frame-ancestors 'none';
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
