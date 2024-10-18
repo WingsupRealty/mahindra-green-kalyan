@@ -1,4 +1,5 @@
 /*
-  Content-Security-Policy: style-src 'self' 'nonce-abc123';
+  X-Frame-Options: DENY
+  Content-Security-Policy: script-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; frame-src 'self';
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
